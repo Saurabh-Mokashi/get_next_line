@@ -1,27 +1,4 @@
 hello
-world
-srtnpijrtnwrnt
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
-rnrnwrynwr
-nwrntwtnwrtnwtn
-wrntwrntwrntwrtnwrtnw
-rtnwrntwrtndfasrwehadfbnwetn
+world my
+name is
+42
