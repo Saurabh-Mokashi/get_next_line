@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:22 by smokashi          #+#    #+#             */
-/*   Updated: 2022/06/07 13:54:20 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/07 18:52:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ char	*ft_strdup(const char *s)
 	return (s1);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -155,7 +155,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	//printf("and of s2 is %d\n",ft_strlen(s2));
 	len = ft_strlen(s1) + ft_strlen(s2);
 	//printf("malloc below\n");
-	str = malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	//printf("len+1 val is%d\n",len+1);
 	if (!str)
 	{
@@ -163,12 +163,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	}
 	//printf("\n\ns1 val is %s\n\n",s1);
-	while (s1)
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0]='\0';
+	}
+	while (s1[l])
 	{
 		//printf("str[i]val is %c\n",str[i]);
 		//printf("s1[l]val is %c\n",s1[l]);
 		str[i++] = s1[l++];
 	}
+	//printf("s1 success\n");
 	while (s2[r] != '\0')
 	{
 		//printf("str[i]val is %c\n",str[i]);
@@ -176,8 +182,33 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i++] = s2[r++];
 	}
 	str[i] = '\0';
-	printf("\n\nthe joined string is %s\n\n",str);
+	//printf("\n\nthe joined string is %s\n\n",str);
 	return (str);
+	// char	*new;
+	// int		i;
+	// int		j;
+
+	// i = 0;
+	// j = 0;
+	// if (!s1)
+	// {
+	// 	s1 = (char *)malloc(sizeof(char) * 1);
+	// 	s1[i] = '\0';
+	// }
+	// new = (char *)malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	// if (!new)
+	// 	return (0);
+	// while (s1[i] != '\0')
+	// {
+	// 	new[i] = s1[i];
+	// 	i++;
+	// }
+	// while (s2[j] != '\0')
+	// 	new[i++] = s2[j++];
+	// new[i] = '\0';
+	// free (s1);
+	// return (new);
+
 }
 
 char	*ft_substr(char const *s, unsigned int start, unsigned int len)
@@ -200,6 +231,7 @@ char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 	i = 0;
 	while (i < len)
 	{
+		printf("stuck here?\n");
 		str[i] = s[start + i];
 		i++;
 	}

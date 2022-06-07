@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:28 by smokashi          #+#    #+#             */
-/*   Updated: 2022/06/07 14:13:40 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/07 18:52:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*buffalloc(int fd, char *s)
 
 	//printf("here\n");
 	ret = ft_calloc (BUFFER_SIZE + 1, (sizeof(char)));
+	if (!ret)
+		return (NULL);
 	//printf("buffer size=%d\n",BUFFER_SIZE);
 	//printf("no\n");
 	while (!ft_strchr(s, '\n'))
@@ -37,33 +39,25 @@ char	*buffalloc(int fd, char *s)
 		//printf("s vals are now %s\n",s);
 		//printf("ft_strchr(s,) val is %s",ft_strchr(s, '\n'));
 	}
-	//printf("out if while loop\n");
+	printf("buffalloc string is %s\n",s);
 	free (ret);
 	return (s);
 }
 
-// char	*parser(char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i] && s[i] != '\n')
-// 	{
-// 		printf("%c", s[i]);
-// 		i++;
-// 	}
-// 	return (ft_substr(s, 0, i + 1));
-// }
 char *getword(char *s)
 {
 	int i;
 	char *t;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while(s[i]!='\0' && s[i]!='\n')
 		i++;
-	printf("\nival is %d",i);
+	//printf("\nival is %d",i);
 	t = ft_calloc(i + 2, sizeof(char));
+	if (!t)
+		return (NULL);
 	i = 0;
 	while(s[i]!='\0' && s[i]!='\n')
 	{
@@ -74,7 +68,8 @@ char *getword(char *s)
 		t[i++] = s[i++];
 	t[i]='\0';
 	printf("\nt string is %s",t);
-	return t;
+	//free(s);
+	return (t);
 }
 
 char *buffrearrange(char *s)
@@ -84,7 +79,7 @@ char *buffrearrange(char *s)
 	i = 0;
 	while(s[i] && s[i]!= '\n')
 		i++;
-	//printf("\n\nbuffer is %s\n",ft_substr(s,i+1,ft_strlen(s)));
+	printf("\n\nbuffer is %s\n",ft_substr(s,i+1,ft_strlen(s)));
 	return (ft_substr(s,i+1,ft_strlen(s)));
 }
 char	*get_next_line(int fd)
@@ -114,11 +109,8 @@ char	*get_next_line(int fd)
 	if (!buf)
 		return (NULL);
 	ret = getword(buf);
-	printf("\n\nret string is %s\n\n",ret);
 	buf = buffrearrange(buf);
-	printf("len is %d\n", ft_strlen(buf));
-	printf("\n\nbuffer is %s\n\n",buf);
-	// ret = parser(buf);
-	// printf("\nret is %s\n",ret);
+	printf("buf after rearranging is %s\n",buf);
+	//printf("len is %d\n", ft_strlen(buf));
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:00:31 by smokashi          #+#    #+#             */
-/*   Updated: 2022/06/07 13:31:20 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/07 18:43:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int	main(void)
 	fd = open("temp.txt", O_RDONLY);
 	//lol = read(fd,temp,5);
 	//printf("we read %d bytes and char is %s",lol,temp);
-	printf("%s", get_next_line(fd));
+	printf("Returned final string is :%s\n", get_next_line(fd));
+	printf("Returned final string is :%s\n", get_next_line(fd));
+	printf("Returned final string is :%s",get_next_line(fd));
+	printf("Returned final string is :%s",get_next_line(fd));
 	return (0);
 }
