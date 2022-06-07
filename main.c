@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:00:31 by smokashi          #+#    #+#             */
-/*   Updated: 2022/06/06 14:51:12 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:31:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@
 int	main(void)
 {
 	int	fd;
+	char *temp;
+	int lol;
 
+	//temp = malloc(100*sizeof(char));
 	fd = open("temp.txt", O_RDONLY);
+	//lol = read(fd,temp,5);
+	//printf("we read %d bytes and char is %s",lol,temp);
 	printf("%s", get_next_line(fd));
 	return (0);
 }

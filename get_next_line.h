@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:31 by smokashi          #+#    #+#             */
-/*   Updated: 2022/06/06 16:18:55 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:58:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ char			*get_next_line(int fd);
 void			*ft_calloc(size_t nitems, size_t size);
 void			ft_bzero(void *s, int n);
 void			*ft_memset(void *str, int ch, int freq);
+char            *ft_strchr(const char *s, int c);
+void            *ft_calloc(size_t nitems, size_t size);
+
 
 #endif
